@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-21-2021 03:56:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="sv.edu.udb.hibernate.Datosempleados" table="datosempleados" catalog="empleados" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="nombres" type="string">
+            <column name="Nombres" length="100" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="Apellidos" length="100" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="Sexo" length="10" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="Edad" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="Telefono" length="10" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="Direccion" length="1000" />
+        </property>
+    </class>
+</hibernate-mapping>

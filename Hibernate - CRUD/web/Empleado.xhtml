@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:ui="http://java.sun.com/jsf/facelets">
+        <h:head>
+        <title>Agregar Cliente</title>
+        </h:head>
+        <h:body>
+            <h2 align="center">CRUD - HIBERNATE </h2>
+        <br/>
+        <h:form>
+            <h:panelGrid columns="2" style="margin: 0 auto;" border="3">
+                <h:outputLabel for="id" value="ID: " />
+                <h:inputText id="id" value="#{empleadoBean.empleado.id}" />
+            <h:outputLabel for="nombres" value="Nombres: " /> 
+                <h:inputText id="nombres" value="#{empleadoBean.empleado.nombres}"/>
+            <h:outputLabel for="nombres" value="Apellidos: " /> <h:inputText id="apellidos" value="#{empleadoBean.empleado.apellidos}"/>
+                <h:outputLabel for="edad" value="Edad: " /> <h:inputText id="edad" value="#{empleadoBean.empleado.edad}"/>
+            <h:outputLabel for="tel" value="Telefono: " /> <h:inputText id="tel" value="#{empleadoBean.empleado.telefono}"/>
+                <h:outputLabel for="direc" value="Dirección: " /> <h:inputText id="direc" value="#{empleadoBean.empleado.direccion}"/>
+        </h:panelGrid>
+            <br/>
+            <h:panelGrid columns="4" style="margin: 0 auto;" border="3" >
+            <h:commandButton value="Guardar" action="#{empleadoBean.addEmpleado()}" />
+            <h:commandButton value="Consultar Cliente" action="#{empleadoBean.returnEmpleadoId()}" />
+            <h:commandButton value="Eliminar" action="#{empleadoBean.deleteEmpleado()}" />
+            <h:commandButton value="Actualizar" action="#{empleadoBean.updateEmpleado()}" />
+        </h:panelGrid>
+        <h:messages infoStyle="color: blue" globalOnly="true"/>
+        </h:form>
+        <br/>
+        <form>
+            <h:panelGrid columns="2" style="margin: 0 auto;" border="3" >
+                <h:dataTable var="list" value="#{empleadoBean.empleados}" border="2">
+                <h:column>
+                <f:facet name="header" >
+                <h:outputText value="ID"/>
+                </f:facet>
+                <h:outputText value="#{list.id}"/>
+                </h:column>
+                <h:column>
+                <f:facet name="header">
+                <h:outputText value="Nombres"/>
+                </f:facet>
+                <h:outputText value="#{list.nombres}"/>
+                </h:column>
+                <h:column>
+                <f:facet name="header">
+                <h:outputText value="Apellidos"/>
+                </f:facet>
+                <h:outputText value="#{list.apellidos}"/>
+                </h:column>
+                <h:column>
+                <f:facet name="header">
+                <h:outputText value="Edad"/>
+                </f:facet>
+                <h:outputText value="#{list.edad}"/>
+                </h:column>
+                <h:column>
+                <f:facet name="header">
+                <h:outputText value="Teléfono"/>
+                </f:facet>
+                <h:outputText value="#{list.telefono}"/>
+                </h:column>
+                <h:column>
+                <f:facet name="header">
+                <h:outputText value="Dirección"/>
+                </f:facet>
+                <h:outputText value="#{list.direccion}"/>
+                </h:column>
+                </h:dataTable>
+             </h:panelGrid>
+                </form>
+        </h:body>
+</html>
